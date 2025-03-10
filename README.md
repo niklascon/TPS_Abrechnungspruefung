@@ -104,62 +104,62 @@ The project follows the MVC architecture, which separates the application into t
 1. The website aims to enable tenants to upload their rent bills and have them checked for errors. The uploaded bill will be compared with the previous year’s bill. In the future, external data, such as the weather, should also be possible. The start page is shown below.
    
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2e06b271-b2cb-4b9a-8c30-4745ec509c3b" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_1.png" width="90%" />
 </p>
 
 2. Before a rental statement can be uploaded, the user must log in. If the user already has an account, they can log in on the login page with their username. In the current version, user accounts are not yet protected by passwords.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/11985b81-56bf-44d6-a7f8-c2a267f283a6" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_2.png" width="90%" />
 </p>
 
 3. If the user does not yet have an account, they can create one by clicking ‘Registrieren’ on the login page. Currently, each user is assigned a property on the website at any time, so the user must add a new property when creating their account.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/55cba5f6-1698-4cc1-9d9c-e8bb8cf7252a" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_3.png" width="90%" />
 </p>
 
 4. Once logged in, users can upload a rental statement via ‘Hochladen’ in the menu bar. Users can select a desired rental statement via ‘Durchsuchen’ or use the drag-and-drop option to do this.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1211791c-5991-4ba0-b219-a284f76d2bbc" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_4.png" width="90%" />
 </p>
 
 5. The system now extracts the data from the uploaded PDF. Currently, only rental invoices with a specific layout are accepted, and the PDF must be editable.
 You can click the pencil icon on the current page to change specific values if they have not been correctly extracted from the document. In addition, booking types can be removed via ‘Löschen’ and added via ‘Reihe hinzufügen’. It is essential that the user gives the document a name before saving and selects the property if they have more than one. After the user clicks ‘Absenden’, the uploaded invoice is compared with the invoice from the previous year. Any significant differences are then saved in the database.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8193599d-75ab-4736-ae1c-2ca8d044f423" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_5.png" width="90%" />
 </p>
 
 6. Once the invoice has been added, the user is taken to the invoice overview page, which can be accessed via the navigation bar under ‘Rechnungen’. Here, the user can delete invoices.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0b2fc6a0-961a-499d-af2e-5b1ddecb6a26" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_6.png" width="90%" />
 </p>
 
 7. To determine whether the uploaded invoice contains anomalies, the user can navigate to ‘Prüfungsergebnisse’ in the menu bar. Invoices with anomalies are marked with a small red ‘i’ to the left of the invoice. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ce1e2e81-c677-441c-bf0d-29f042db2701" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_7.png" width="90%" />
 </p>
 
 8. The user can now click the ‘i’ to obtain more detailed information. The anomalies recorded in the database are then displayed.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6217a78e-0ee3-4b2c-a580-a976796cda70" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_8.png" width="90%" />
 </p>
 
 9. An alternative way to view anomalies in rental statements is the ‘Expertenanalyse’, which can be accessed via the menu bar. Here, the user can select two invoices to compare. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5f01d91d-2111-4e58-8593-d38a10e3357a" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_9.png" width="90%" />
 </p>
 
 10. In contrast to the ‘Prüfungsergebnisse’, the anomalies are not loaded from the database, but are generated anew. The user can now analyse the booking types for a different percentage deviation value via ‘Reihe hinzufügen’. After clicking on ‘Vergleichen’, a list of all anomalies is displayed.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/438a7495-1a1e-4ae9-b985-5116b57675a8" width="90%" />
+  <img src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/screenshot_10.png" width="90%" />
 </p>
 
 11. Future projects:
@@ -178,7 +178,7 @@ You can click the pencil icon on the current page to change specific values if t
 1. Layout
    
 <p align="center">
-    <img width="719" alt="DatabaseLayout" src="https://github.com/user-attachments/assets/e7ad4dcb-a9e9-439b-982b-fbcd4b6a4b9a" />
+    <img width="719" alt="DatabaseLayout" src="https://github.com/n1c01/TPS_Abrechnungspruefung/blob/main/images/database_layout.png" />
 </p>
 
 - The connection between real_estate and user is of type n:m.
