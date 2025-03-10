@@ -1,0 +1,55 @@
+.bubble {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bubble-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.invoice-values {
+    margin-left: 10px;
+}
+
+.booking-type {
+    color: red;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+}
+
+.styled-hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+.form-select:hover {
+    cursor: pointer;
+}
+.results-header {
+    background-color: #d1e7ff; /
+color: #084298;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subheading {
+    background-color: #f3f3f3;
+    color: #555;
+    padding: 8px 12px;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

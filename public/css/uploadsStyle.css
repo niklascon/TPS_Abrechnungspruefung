@@ -1,0 +1,31 @@
+
+    /* Flexbox layout for side-by-side columns */
+.row {
+    display: flex;
+    gap: 20px; /* Space between columns */
+    height: 100%; /* Ensure row uses full height */
+}
+
+/* Ensure correct column distribution */
+.col-left, .col-right {
+    flex: 1; /* Allocate space based on flex value */
+    max-width: 50%; /* Max 50% width for each column */
+    box-sizing: border-box; /* Prevent padding/borders from breaking layout */
+    overflow: auto; /* Enable scrolling for overflowing content */
+}
+
+/* Adjust proportions for the right column */
+.col-right {
+    flex: 2; /* Make the right column take up more space */
+}
+
+/* Ensure preview elements (images/PDFs) scale properly */
+#file-preview img, #pdf-canvas {
+    width: 100%; /* Full container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Dynamic height adjustment */
+.col-left, .col-right {
+    height: auto; /* Height adjusts to content */
+}

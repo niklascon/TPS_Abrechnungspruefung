@@ -1,0 +1,9 @@
+How to check the pdf read in functionality:
+    1. go to the apache server and type in http://localhost/Teamprojektsoftwareentwicklung/public/index.php
+    2. choose "Uploads" in the menu and upload a relevant pdf
+    3. now compare the values you see with the relevant values in the pdf. The items should be the same
+    4. save your pdf and check if the values are saved in the database. If no error occur and the values are still the same
+        after pressing 'Absenden' than everything is correct.
+
+Note that this is a first version. Most of the code is hardcoded and work only for specific pdfs.
+In addition, you can't change the values in the correction page anymore.

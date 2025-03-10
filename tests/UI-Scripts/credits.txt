@@ -1,0 +1,5 @@
+1) erstmal schauen, dass der footer auf jeder Seite angepasst ist
+→ vorhanden muss sein der name der website + ein Link
+2) dann versuchen von jeder seite aus auf die website zu kommen und wenn man zurückkommt muss man wieder auf der seite landen
+3) bei der Credits und Lizenz Seite bitte schauen ob der footer immer richtig mit eingebunden wird
+4) wenn man auf die Links in der Tabelle geht sollen die sich in einem neuen Tab öffenen

@@ -1,0 +1,76 @@
+.icon-cell {
+    width: 30px;
+    text-align: center;
+    position: relative; /* Required for tooltip positioning */
+}
+
+.icon-cell .icon-link {
+    display: inline-block;
+    color: red;
+    text-decoration: none;
+    position: relative; /* Required for the tooltip */
+}
+
+.icon-cell .icon-link .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #8B0000; /* Darker red background */
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px; /* Ensure enough space around the text */
+    position: absolute;
+    z-index: 1;
+    bottom: 150%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent line breaks in the tooltip */
+}
+
+.icon-cell .icon-link .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #8B0000 transparent transparent transparent; /* Red arrow pointing downward */
+}
+
+.icon-cell .icon-link:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1; /* Show the tooltip on hover */
+}
+
+/* Style for the bubble container */
+.bubble {
+    background-color: #f8f9fa; /* Light gray background for the bubble */
+    border: 1px solid #ddd; /* Subtle border to define the bubble */
+    border-radius: 10px; /* Rounded corners for the bubble */
+    padding: 15px; /* Space inside the bubble */
+    margin: 10px 0; /* Space between bubbles */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Style for the text inside the bubble */
+.bubble-text {
+    margin: 0 0 10px 0; /* Space between the lines */
+    font-size: 14px; /* Font size for readability */
+    color: #333; /* Dark gray text color */
+}
+
+/* Remove bottom margin from the last text element */
+.bubble-text:last-child {
+    margin-bottom: 0;
+}
+
+.alert-green {
+    background-color: #d4edda; /* Helles Grün */
+    color: #155724;           /* Dunkles Grün für den Text */
+    border: 1px solid #c3e6cb; /* Grüner Rahmen */
+    padding: 15px;
+    border-radius: 5px;       /* Abgerundete Ecken */
+}

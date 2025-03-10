@@ -1,0 +1,11 @@
+.marked-for-deletion {
+    border: 2px dashed rgba(255, 99, 71, 0.8) !important;
+    background-color: rgba(255, 99, 71, 0.1) !important;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.custom-divider {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 15px 0;
+}

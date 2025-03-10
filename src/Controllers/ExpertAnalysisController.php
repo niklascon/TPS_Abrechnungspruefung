@@ -1,0 +1,145 @@
+<?php
+
+namespace src\Controllers;
+
+use src\Models\analysis_result_generator\AnalysisResultGenerator;
+use src\Models\database\implementation\Bill;
+use src\Models\database\implementation\Bills;
+use src\Models\database\implementation\Users;
+
+/**
+ * This class is designed for an expert analysis. All the output data is live generated.
+ */
+class ExpertAnalysisController
+{
+    /**
+     * @var int[] the deviation thresholds corresponding to the bookingtypes
+     */
+    private $deviationThresholds = ["Standard" => 10];
+
+    /**
+     * this is the start page that enables the user to choose two bills
+     *
+     * @return void
+     */
+    public function showStartForm(): void {
+        // we need the login controller to check if user is logged in
+        $loginController = new LoginController();
+        if ($loginController->isLoggedIn()) {
+            $userName = $loginController->loggedUsername();
+
+            $bills = new Bills();
+            // only those connected to the user get added
+            $bills->addJoinUser($userName);
+            $billList = [];
+            $billList = $bills->loadAll();
+
+            // show form so user can choose two bills
+            echo "<div class='container pt-5'>";
+            require BASE_DIRECTORY.'src/Views/showExpertAnalysisForm.php';
+            echo "</div>";
+        } else {
+            require BASE_DIRECTORY.'src/Views/showEmptyExpertAnalysis.php';
+        }
+    }
+
+    /**
+     * show expert analysis of two given bills
+     * first check if user has permission to access bills
+     *
+     * @param Bill $bill1 to compare
+     * @param Bill $bill2 to compare
+     * @return void
+     */
+    public function showExpertAnalysis(Bill $bill1, Bill $bill2): void {
+        // we need the login controller to check if user is logged in
+        $loginController = new LoginController();
+        if (!$loginController->isLoggedIn()) {
+            require BASE_DIRECTORY.'src/Views/showEmptyExpertAnalysis.php';
+            return;
+        }
+
+        // check if the user has the right to see the bill
+        $userName = $loginController->loggedUsername();
+        $users = new Users();
+        $users->addWhereUserName($userName);
+        $allUsers = $users->loadAll();
+        // check if a user exists;
+        if (!$allUsers) {
+            require BASE_DIRECTORY.'src/Views/noPermission.php';
+            return;
+        }
+        // check if user has permission to access site
+        if (!$bill1->hasUserPermission($allUsers[0]) || !$bill2->hasUserPermission($allUsers[0])) {
+            require BASE_DIRECTORY.'src/Views/noPermission.php';
+            return;
+        }
+
+        // this actually shows the expert bill analysis
+        $this->accessExpertBillAnalysis($bill1, $bill2);
+    }
+
+    /**
+     * now, actually show expert bill analysis of two given bills
+     *
+     * @param \src\Models\database\implementation\Bill $bill1 to compare
+     * @param \src\Models\database\implementation\Bill $bill2 to compare
+     * @return void
+     */
+    private function accessExpertBillAnalysis(Bill $bill1, Bill $bill2): void {
+        $bills = new Bills();
+        // only show those connected to the user get added
+        $loginController = new LoginController();
+        $userName = $loginController->loggedUsername();
+        $bills->addJoinUser($userName);
+        $billList = [];
+        $billList = $bills->loadAll();
+
+        echo "<div class='container pt-5'>";
+        // show form so user can choose two bills
+        // check if the user has set new deviation thresholds
+        $rowIndex = 0;
+        while (array_key_exists("data-" . $rowIndex . "-0", $_POST)) {
+            $this->deviationThresholds[$_POST['data-' . $rowIndex . '-0']] = $_POST['data-' . $rowIndex . '-1'];
+            $rowIndex++;
+        }
+        require BASE_DIRECTORY.'src/Views/showExpertAnalysisForm.php';
+
+        // save suspicious analysis result in $suspiciousValues. Just generate it without saving in the database
+        $analysisResultGenerator = new AnalysisResultGenerator();
+        $suspiciousValues = $analysisResultGenerator->compareTwoYears($bill1, $bill2, $this->deviationThresholds);
+
+        // only show "Prüfungsergebnisse" once at the top
+        if (!empty($suspiciousValues)) {
+            echo "<link rel='stylesheet' href='" . PUBLIC_DIRECTORY . "css/expertAnalysis.css'>";
+
+            //spezifik Title for the compared bills
+            $title = "Prüfungsergebnisse für " . $bill1->getName() . " und " . $bill2->getName(); // oder $bill1->getId() je nach Bedarf
+
+            echo "
+        <div class='results-header'>$title</div>
+        <div class='subheading'>Mögliche Abweichungen wurden in den folgenden Bereichen aufgefunden</div>
+        ";
+        }
+
+        // go through all suspicious analysis results and show them in the form
+        foreach ($suspiciousValues as $value) {
+            // $value is an array generated by AnalysisResultGenerator
+            $analysisResult = $value["analysisResult"];
+            $itemOfAnalysis1 = $value["itemOfAnalysis1"];
+            $itemOfAnalysis2 = $value["itemOfAnalysis2"];
+
+            require BASE_DIRECTORY.'src/Views/showExpertAnalysisResultBubble.php';
+        }
+
+        // show that no output is given
+        if (empty($suspiciousValues)) {
+            echo "<link rel='stylesheet' href='".PUBLIC_DIRECTORY."css/analysisResultsStyle.css'>";
+            echo '<div class="alert alert-green mt-3" role="alert">';
+            echo 'Es konnten keine Unstimmigkeiten gefunden werden!';
+            echo '</div>';
+        }
+
+        echo "</div>";
+    }
+}

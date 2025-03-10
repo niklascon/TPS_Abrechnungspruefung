@@ -1,0 +1,6 @@
+.idea/
+.DS_Store
+public/.DS_Store
+public/uploads/*
+
+vendor/phpunit/phpunit/.phpunit.result.cache

@@ -1,0 +1,9 @@
+How to test if the expert analysis to compare to bills work
+
+1. execute the sql script
+2. go to Website and log in with "MaxMustermann". This is important because only MaxMustermann has access
+to real estate with id 1. Currently every bill saved is linked to real estate with id 1.
+3. upload two bills and choose some costs. These costs can differ depending on what you wanna test
+4. Now, navigate in menu bar to "Expertenanalyse"
+5. Choose both bills you wanna compare and click on "Vergleichen"
+6. Now you should see the expected output based on your bill costs

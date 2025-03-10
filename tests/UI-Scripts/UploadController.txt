@@ -1,0 +1,10 @@
+Test Script for UploadController
+
+How to test upload functionality:
+1. start the Apache web server and the database
+2. go to http://localhost/Teamprojektsoftwareentwicklung/public/index.php?page=2
+3. test "Durchsuchen": click Durchsuchen and try different documents.
+        One that fits the parameters: <5MB and fitting format, one that is too big and one that is of the wrong format
+4. test Drag and Drop: Drag and Drop different documents (same types as in step 3) onto the given field
+If done correctly, only the fitting documents should be accepted. Therefore, it should be switched to the preview page.
+For the wrong ones, there should be an error message displayed explaining the issue with this document.

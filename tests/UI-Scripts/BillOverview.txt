@@ -1,0 +1,6 @@
+How to test if the bill overview does its job correctly
+
+1. execute the sql script (it is important to have the dummy values)
+2. click on "Overview", there should be no bills shown, just "Sie haben noch keine Rechnungen hochgeladen." and a button that redirects to the login page
+3. log in with one of the dummy users, for example "Max Mustermann"
+4. click on "Overview" again, there should be some examples shown as well as a button that redirects to the upload page

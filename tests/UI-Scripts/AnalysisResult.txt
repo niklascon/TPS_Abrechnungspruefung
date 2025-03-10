@@ -1,0 +1,15 @@
+How to test if the pre year comparison works
+
+1. execute the sql script
+2. go to Website and log in with "Max Mustermann". This is important because only Max Mustermann has access
+to real estate with id 1. Currently every bill saved is linked to real estate with id 1.
+3. upload two bills and choose some costs. Make sure the bill YEAR differ only by a year. For example 2019 and 2020.
+4. Now, navigate in menu bar to "Prüfungsergebnisse"
+5. If your bill is marked by an "i" then values in it differ more than 10%.
+6. click on "i" of a bill to see more details
+7. In the details you can see what differs more than 10%.
+
+4. if you select "Prüfungsergebnisse" and remove the ID in the URL, the Page Not Found error should appear.
+
+4. if you select "Prüfungsergebnisse" and change the ID in the URL to an account ID that the user doesn't have,
+an error message will appear stating that the user doesn't have permission.

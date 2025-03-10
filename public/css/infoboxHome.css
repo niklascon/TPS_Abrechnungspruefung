@@ -1,0 +1,66 @@
+/* Info-Box Styling */
+.info-box {
+    background-color: #f8f9fa;
+    border: 2px solid #6c757d;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 500px;
+}
+
+/* Info-Box Headline */
+.info-box h4 {
+    margin-bottom: 20px;
+}
+
+/* List Style */
+.instruction-list {
+    padding-left: 0;
+    list-style: decimal;
+}
+
+/* List Items - Flexbox */
+.instruction-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Anweisungstext */
+.instruction-list li span {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+/* Button Styling */
+.btn-action {
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Responsives Design für kleine Bildschirme */
+@media (max-width: 768px) {
+    .info-box {
+        min-height: auto;
+        padding: 15px;
+    }
+
+    /* Verkleinere Schriftgröße der Anweisungstexte */
+    .info-box h4 {
+        font-size: 1.2rem;
+    }
+
+    /* Anweisungs-Listenpunkt anpassen */
+    .instruction-list li {
+        justify-content: flex-start;
+    }
+
+    /* Buttons optimieren, damit sie auch auf kleinen Bildschirmen gut aussehen */
+    .btn-action {
+        padding: 12px;
+        font-size: 14px;
+    }
+}

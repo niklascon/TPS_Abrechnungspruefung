@@ -1,0 +1,18 @@
+{
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/",
+            "Unit\\": "tests/Unit/"
+        }
+    },
+    "require": {
+        "thiagoalessio/tesseract_ocr": "^2.13",
+      "ext-mysqli": "*",
+      "ext-pdo": "*",
+        "smalot/pdfparser": "^2.11",
+      "ext-ctype": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    }
+}

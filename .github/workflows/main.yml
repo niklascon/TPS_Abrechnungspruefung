@@ -1,0 +1,67 @@
+name: Comment on Pull Request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+    # Check out the repository
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    # Post a comment using github-script
+    - name: Post Comment
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const comment = `Checkliste Code Review 🎉
+          Funktionalität:
+          - Wird das Akzeptanzkriterium erfüllt: ✅❌➖
+          - Ist die Implementierung Effizient/Performant genug: ✅❌➖
+          - Kritische Inputs/Parameter werden validiert (Zum Beispiel Null, OutOfBounds): ✅❌➖
+          - Sonstiges:
+          
+          Sicherheit:
+          - Unberechtigte Nutzer können nicht auf Daten/Bereiche Zugreifen auf die sie es nicht sollen: ✅❌➖
+          - Sonstiges:
+          
+          Tests:
+          - Gibt es automatisierte Tests, wenn immer es möglich ist: ✅❌➖
+          - Gibt es manuelle Testpläne, wenn automatisierte Tests nicht notwendig sind: ✅❌➖
+          - Alle automatisierten Tests werden akzeptiert: ✅❌➖
+          - Alle manuellen Testpläne werden akzeptiert: ✅❌➖
+          - Werden Randfälle getestet: ✅❌➖
+          - Werden invalide Eingaben getestet: ✅❌➖
+          - Die Webseite wird auch korrekt auf mobilen Endgeräten angezeigt: ✅❌➖
+          - Sonstiges:
+          
+          Code Lesbarkeit:
+          - Sind alle Variablen, Funktionen, Klassen, Dateien Sinnvoll benannt: ✅❌➖
+          - Es wird eine sinnvolle Ordnerstruktur eingehalten: ✅❌➖
+          - Es gibt keine Code Doppelungen: ✅❌➖
+          - Der Code ist korrekt formatiert: ✅❌➖
+          - Subfunktionalitäten werden ausgelagert: ✅❌➖
+          - Keine Funktion ist zu lang: ✅❌➖
+          - Längere Styles und Script Sektionen sind ausgelagert in Separate Files: ✅❌➖
+          
+          Dokumentation:
+          - Für jede Code Datei, wird die Funktionalität und der Kontext erklärt: ✅❌➖
+          - Jede PHP-Klasse und Funktion wird nach den PHP-Doc Standards kommentiert: ✅❌➖
+              https://docs.phpdoc.org/guide/references/phpdoc/basic-syntax.html#what-is-a-docblock
+          - Für entscheidende Funktionalitäten gibt es Inlinekommentare: ✅❌➖
+          -	Sonstiges:
+          
+          Weiteres:
+          - Es gibt keine Errors und keine Warnungen in der IDE oder von Teamscale: ✅❌➖
+          -	Relevante Parameter Können konfiguriert werden: ✅❌➖`;
+          
+          // Use octokit to create the comment
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.payload.pull_request.number,
+            body: comment
+          });

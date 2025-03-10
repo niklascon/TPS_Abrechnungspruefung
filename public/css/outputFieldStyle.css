@@ -1,0 +1,48 @@
+/* Allgemeines Styling */
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styling für den Output-Bereich */
+.output-container {
+    background-color: #f8f9fa; /* Helles Grau als Hintergrund */
+    border: 1px solid #dee2e6; /* Dezenter Rahmen */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 20px; /* Innenabstand */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
+    transition: all 0.3s ease-in-out; /* Sanfte Übergänge bei Interaktionen */
+}
+
+.output-container:hover {
+    background-color: #e9ecef; /* Hintergrund wird beim Hover etwas dunkler */
+    border-color: #007bff; /* Rahmenfarbe wird beim Hover blau */
+}
+
+#output-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057; /* Dunkles Grau für den Text */
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem; /* Etwas größere Schriftgröße */
+    color: #007bff; /* Blau für die Überschrift */
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 3rem; /* Abstände nach oben */
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
+}

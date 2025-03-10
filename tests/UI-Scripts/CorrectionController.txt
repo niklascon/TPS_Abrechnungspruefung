@@ -1,0 +1,18 @@
+How to check if the correction page works
+
+1. go to the upload page and upload one of the clients pdfs
+2. the correction form should look like this:
+    - "Rechnungsname eingeben" as Bill Name on the top left
+    - the read values of the pdf
+3. click "Absenden", the page should reload
+4. Bitte eingeben, should be red now
+5. change some values, test edge cases, click "Absenden"
+    5.1 if they are invalid, you should always get the "Bitte geben Sie gültige Eingaben an" alert and they should be marked red
+    5.2 if they are all valid, you should be redirected to the Bill Overview Page and see the newly created bill
+
+
+1. Upload a bill to a realestate and a year that already exists.
+2. an error should appear informing the user that the bill already exists
+
+the important files are correctionform.php, CorrectionController.php, add_delete.js and Form.php
+open the database and check the values in the line_items table. they should correspond to those that you put into the form

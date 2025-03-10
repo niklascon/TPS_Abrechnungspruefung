@@ -1,0 +1,99 @@
+/* Allgemeines Styling */
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flexbox-Container für die nebeneinander angeordneten Bereiche */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Damit die Elemente auf kleineren Bildschirmen untereinander angeordnet werden */
+    gap: 20px;
+}
+
+/* Beschreibung auf der linken Seite */
+.col-md-4 {
+    flex: 1; /* Flexbox für die linke Spalte */
+    min-width: 280px; /* Mindestbreite für bessere Darstellung */
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung */
+}
+
+.info-text {
+    padding: 20px;
+    border: 2px solid #ccc; /* Rahmen um den Info-Text */
+    border-radius: 8px; /* Abgerundete Ecken */
+    background-color: #f9f9f9; /* Hintergrundfarbe */
+    margin-right: 20px; /* Abstand nach rechts */
+}
+
+/* Form für den Datei-Upload */
+.col-md-8 {
+    flex: 2; /* Flexbox für die rechte Spalte */
+    min-width: 400px;
+}
+
+/* Drag-and-Drop Bereich */
+#drag-drop-area {
+    border: 2px dashed #6c757d; /* Dunkelgrauer gestrichelter Rahmen */
+    border-radius: 8px; /* Abgerundete Ecken */
+    background-color: #f8f9fa; /* Helles Grau */
+    transition: background-color 0.3s, border-color 0.3s;
+    padding: 20px; /* Abstand zum Rand */
+    margin: 20px 0; /* Abstand zum Rand des übergeordneten Elements */
+}
+
+/* Hover-Effekt für Drag-and-Drop */
+#drag-drop-area:hover {
+    background-color: #e9ecef; /* Leicht dunkleres Grau */
+    border-color: #007bff; /* Blau wie in Bootstrap */
+}
+
+/* Button-Stil */
+#choose-file-btn {
+    background-color: #6c757d; /* Sekundäre Farbe */
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#choose-file-btn:hover {
+    background-color: #5a6268; /* Etwas dunkler */
+}
+
+/* Vorschau-Bereich */
+#file-preview img,
+#pdf-canvas {
+    border: 1px solid #dee2e6; /* Rahmen um die Vorschau */
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.text-info {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Zusätzliche Anpassungen für den Info-Text */
+.info-text p {
+    font-size: 0.9rem; /* Kleinere Schriftgröße */
+    line-height: 1.4;
+    margin-bottom: 0; /* Weniger Abstand nach unten */
+}

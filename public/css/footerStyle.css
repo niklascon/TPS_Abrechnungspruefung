@@ -1,0 +1,24 @@
+/* Grundlegende Stile */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dynamischer Inhaltsbereich */
+#dynamic-content {
+    flex: 1;
+    padding-bottom: 20px; /* Platz zwischen Content und Footer */
+    box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 20px; /* Zusätzlicher Abstand zum dynamischen Content */
+}

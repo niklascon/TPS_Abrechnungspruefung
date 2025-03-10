@@ -1,0 +1,5 @@
+How to check the pdf parsing functionality:
+    1. go to the apache server and type in http://localhost/Teamprojektsoftwareentwicklung/src/Models/pdf_parsing/testpdf.php
+    2. compare the values you see to page 3 of the 2016 document in src/Models/pdf_parsing
+
+Note that this is a first version that only reads the data from this table, more is going to be added in the next weeks

@@ -1,0 +1,13 @@
+How to test if the real estates overview does its job correctly
+
+1. execute the sql script (it is important to have the dummy values)
+2. click on "Real Estates", there should be nothing shown, just "Sie sind nicht eingeloggt!" and a button that redirects you to the login page
+3. log in with one of the dummy users, for example "Max Mustermann"
+4. click on "Real Estates" again, there should be some examples shown and a "Hinzufügen" Button
+
+If you further want to test the adding functionality, you can
+1. click the button
+2. enter names into the field:
+    one that already exists, it should echo "Es existiert bereits ein Real Estate mit diesem Namen."
+    one that is new, it should echo "Real Estate hinzugefügt!"
+3. if you entered a new one, click "Zurück zur Übersicht", your new entry should be there

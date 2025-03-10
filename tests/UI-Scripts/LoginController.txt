@@ -1,0 +1,34 @@
+Test script
+- Registration:
+A User Can Create a new account by choosing a username. The account is saved as
+a User in the Database
+    1. Click on "Einloggen" in the menu
+    2. Click on "Registrieren"
+    3. Enter an unused, non-empty username with only letters and numerals
+    Result:
+    - You are redirected to the Home page where you get an individual greeting
+    - when going to localhost/phpmyadmin you will find the new user in the table "user"
+    Invalid Inputs:
+    - an empty String: no user is created, an error is displayed on the registration page
+    - a String including spaces or special characters: no user is created, an error is displayed on the registration page
+    - an existing name: no user is created, an error is displayed on the registration page
+
+-Log In:
+A User can Log in by using an existing username
+    1. Click on "Einloggen" in the menu
+    2. Enter an existing, non-empty username with only letters and numerals
+    Result:
+    - You are redirected to the Home page where you get an individual greeting, the "Einloggen" button,
+    says "Ausloggen"
+    Invalid Inputs:
+    - an empty String: no login, an error is displayed on the login page
+    - a String including spaces or special characters: no login, an error is displayed on the login page
+    - a nonexistent name: no login, an error is displayed on the login page
+
+-Log out
+When Logged in to an account:
+    1. Click on "Ausloggen" in the menu
+    2. You are now redirected to the homepage with the generic message "Willkommen auf der Website"
+    and the "Ausloggen" button now says "Einloggen"
+    3. You should not be able to access resources in the tabs "Rechnungen" and "Immobilien"
+    4. Log in with a different username

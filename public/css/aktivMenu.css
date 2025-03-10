@@ -1,0 +1,7 @@
+
+    /* Benutzerdefinierte Stilregel für das aktive Menüelement */
+.nav-item.active .nav-link {
+    background-color: #495057; /* Dunklerer Hintergrund für das aktive Element */
+    color: #fff;
+    border-radius: 5px;
+}
